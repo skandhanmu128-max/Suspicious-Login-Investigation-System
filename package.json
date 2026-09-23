@@ -1,0 +1,16 @@
+{
+  "name": "sentineltrace",
+  "version": "1.0.0",
+  "description": "SentinelTrace - SOC Authentication Detection & Investigation Platform",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\" --names \"SERVER,CLIENT\" --prefix-colors \"cyan,magenta\"",
+    "server": "cd server && npx tsx watch index.ts",
+    "client": "cd client && npm run dev",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "seed": "cd server && npx tsx db/seed.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
