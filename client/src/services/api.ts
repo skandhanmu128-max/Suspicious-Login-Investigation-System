@@ -1,6 +1,5 @@
-// ─── API Service ──────────────────────────────────────────────────────────────
-
-const BASE = '/api';
+const API_BASE = (import.meta.env.VITE_API_URL as string | undefined) || '';
+const BASE = API_BASE ? `${API_BASE.replace(/\/$/, '')}/api` : '/api';
 
 export function getStoredToken(): string | null {
   return localStorage.getItem('sentinel_token');
